@@ -65,6 +65,7 @@ function openWidget() {
   zE("webWidget", "show");
   zE("webWidget", "open");
   var desktopWidget = document.getElementById("webWidget");
+  if (!desktopWidget) return;
   desktopWidget.style.display = "block";
   var $head = $("#webWidget").contents().find("head");
   $head.append(
@@ -250,3 +251,7 @@ if (clickSolution) {
     gtag("event", "click_solution");
   });
 }
+
+/* #webWidget {
+    display: none;
+} */
