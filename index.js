@@ -38,8 +38,10 @@ getUserDetails();
 
 // Show and Hide Widget for custom styles
 window.addEventListener("DOMContentLoaded", function () {
-  zE("webWidget", "show");
-  zE("webWidget", "open");
+  /*  zE("webWidget", "show");
+  zE("webWidget", "open"); */
+  // hide widget on page load
+  zE("webWidget", "hide");
 });
 
 // Get Chat In Progress Status and show Widget
