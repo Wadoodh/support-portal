@@ -38,10 +38,11 @@ getUserDetails();
 
 // Show and Hide Widget for custom styles
 window.addEventListener("DOMContentLoaded", function () {
-  /*  zE("webWidget", "show");
-  zE("webWidget", "open"); */
+  zE("webWidget", "show");
+  zE("webWidget", "open");
+
   // hide widget on page load
-  zE("webWidget", "hide");
+  // zE("webWidget", "hide");
 });
 
 // Get Chat In Progress Status and show Widget
@@ -235,7 +236,8 @@ if (modal) {
 }
 
 //Widget Close when close button clicked
-zE("webWidget:on", "close", function () {
+zE("webWidget:on", "close", function (e) {
+  e.stopPropagation();
   closeWidget();
 });
 
@@ -253,7 +255,3 @@ if (clickSolution) {
     gtag("event", "click_solution");
   });
 }
-
-/* #webWidget {
-    display: none;
-} */
