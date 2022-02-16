@@ -1,1 +1,5 @@
-console.log(wf_utils);
+function getUser() {
+  wf_utils.isLoggedIn((user) => {
+    console.log(user);
+  });
+}
