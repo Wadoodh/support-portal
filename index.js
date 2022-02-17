@@ -225,7 +225,8 @@ if (btnExpert) {
 
 //Widget Close when modal clicked or Escape key pressed
 if (modal) {
-  modal.addEventListener("click", function () {
+  modal.addEventListener("click", function (e) {
+    e.stopPropagation();
     closeWidget();
   });
   document.addEventListener("keydown", (evt) => {
@@ -236,8 +237,7 @@ if (modal) {
 }
 
 //Widget Close when close button clicked
-zE("webWidget:on", "close", function (e) {
-  e.stopPropagation();
+zE("webWidget:on", "close", function () {
   closeWidget();
 });
 
